@@ -12,6 +12,7 @@ const Wrap = styled.div`
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      background-image: ${props => `url("/images/${props.bgImage}")`};
 `     
 const ItemText = styled.div`
       padding-top: 10vh;
@@ -21,6 +22,9 @@ const ButtonGroup = styled.div`
       display: flex;
       align-items: end;
       justify-content: center;
+      @media (max-width: 768px){
+            flex-direction: column;
+      }
       
       
 `
@@ -51,7 +55,7 @@ const DownArrow = styled.img`
       height: 30px;
       width: 30px;
       margin-bottom: 15px;
-      animation: hop e 1.5s;
+      animation: hop infinite 1.5s;
       overflow-x: hidden;
       
 `
@@ -60,21 +64,21 @@ const Buttons = styled.div`
       flex-direction: column;
       align-items: center;
 `
-function Section() {
+function Section({title,description,backgroundImg,leftBtnText,rightBtnText}) {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
-            <h1>Model S</h1>
-            <p>Order Online Touchless Delivery</p>
+            <h1>{title}</h1>
+            <p>{description}</p>
       </ItemText>
       <Buttons>
             <ButtonGroup>
                   <LeftButton>
-                        Custom Order
+                        {leftBtnText}
                   </LeftButton>
 
                   <RightButton>
-                        Existing Inventory
+                        {rightBtnText}
                   </RightButton>
             </ButtonGroup>
             <DownArrow src = "images/down-arrow.svg" />
