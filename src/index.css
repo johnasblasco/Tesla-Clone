@@ -1,0 +1,30 @@
+a,img,li,button {
+      cursor: pointer;
+}
+
+
+body{
+      font-family: monospace;
+      display: flex;    
+      flex-direction: column;
+      width: 100%;
+      margin:0;
+      padding: 0;
+      box-sizing: border-box;
+}
+main{
+      flex: 1;
+}
+
+footer{
+
+      width: 100%;
+      color: white;
+      background-color: #151515;
+}
+
+@keyframes hop {
+      0%{transform: translateY(0);}
+      50%{transform: translateY(10px);}
+      100%{transform: translateY(0);}
+}
