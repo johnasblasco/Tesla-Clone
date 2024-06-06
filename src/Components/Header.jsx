@@ -1,52 +1,70 @@
-import React from 'react';
-import Logo from '../assets/logo.png';
-import styled from 'styled-components';
-import Icon from '../assets/react.svg';
-const StyledImg = styled.img`
-      width: 100px;
-`;
-const Styledheader = styled.div`
-      margin: 1%;
-      display: flex;
-      justify-content: space-between;
-`;
-const Sli = styled.li`
-      list-style-type: none;
-
-`
-const Sul = styled.ul`
-      display: flex;
-      gap: 10px;
-`
-const Iconatics = styled.img`
-      width: 50px;
-      height: 50px;
-`
+import React from 'react'
+import styled from 'styled-components'
+import MenuIcon from '@mui/icons-material/Menu';
 function Header() {
-      // JS
-      const nav = ['Vehicle','Energy','Charging','Discover','Shop'];
-
   return (
-    <Styledheader>
-      {/* Use the styled component directly */}
-      <StyledImg src={Logo}/>
-      
-      <nav>
-            <Sul>
-                  {nav.map((item,index)=>(
-                        <Sli key={index}>{item}</Sli>
-                  ))}
-            </Sul>
-      </nav>
+    <Headers>
+      <a href="#">
+            <img src="/images/logo.svg" alt="" />
+      </a>
+      <Menu>  
+            <a href="#">Model S</a>
+            <a href="#">Model 3</a>
+            <a href="#">Model X</a>
+            <a href="#">Model Y</a>
+      </Menu>
 
-      <nav>
-            <Iconatics src = {Icon} alt="asdsd" />
-            <Iconatics src = {Icon} alt="asdsd" />
-            <Iconatics src = {Icon} alt="asdsd" />
-      </nav>
+      <RightMenu>
+            <a href="#">Shop</a>
+            <a href="#">Tesla Account</a>
+            <CustomMenu />
 
-    </Styledheader>
-  );
+      </RightMenu>
+
+    </Headers>
+  )
 }
 
-export default Header;
+export default Header
+
+const Headers = styled.div`
+      min-height: 60px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      top:0;
+      left:0;
+      right:0;
+      justify-content:space-between;
+      
+`
+const Menu = styled.div`
+      display: flex;
+      align-items: center;
+
+      a{
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0 10px;
+            flex-wrap: no-wrap;
+      }
+      @media(max-width: 768px){
+            display:none;
+      }
+`
+
+const RightMenu = styled.div`
+      display: flex;
+      align-items: center;
+      a{
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 10px;
+      }
+      
+`
+
+const CustomMenu = styled(MenuIcon)`
+      cursor: pointer;
+`

@@ -1,7 +1,9 @@
 a,img,li,button {
       cursor: pointer;
 }
-
+a{
+      text-decoration: none;
+}
 
 body{
       font-family: monospace;
