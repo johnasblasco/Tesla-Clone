@@ -17,6 +17,7 @@
     "components": "^0.1.0",
     "dotenv": "^16.4.5",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.2.11",
     "react-dom": "^18.2.0",
     "styled": "^1.0.0",
     "styled-components": "^6.1.11"

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade } from "react-awesome-reveal";
+
 
 const Wrap = styled.div`
       width: 100vw;
@@ -67,22 +69,26 @@ const Buttons = styled.div`
 function Section({title,description,backgroundImg,leftBtnText,rightBtnText}) {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-            <h1>{title}</h1>
-            <p>{description}</p>
-      </ItemText>
+      <Fade direction="up" cascade duration={1000}>
+            <ItemText>
+                  <h1>{title}</h1>
+                  <p>{description}</p>
+            </ItemText>
+      </Fade>
+
       <Buttons>
-            <ButtonGroup>
-                  <LeftButton>
-                        {leftBtnText}
-                  </LeftButton>
-                  {rightBtnText && 
-                        <RightButton>
-                              {rightBtnText}
-                        </RightButton>
-                  }
-   
-            </ButtonGroup>
+            <Fade direction="up" cascade duration={1000} >
+                  <ButtonGroup>
+                        <LeftButton>
+                              {leftBtnText}
+                        </LeftButton>
+                        {rightBtnText && 
+                              <RightButton>
+                                    {rightBtnText}
+                              </RightButton>
+                        }
+                  </ButtonGroup>
+            </Fade>
             <DownArrow src = "images/down-arrow.svg" />
       </Buttons>
       
